@@ -1,5 +1,7 @@
 {
-  "name": "geoInfoAPP",
-  "integrations": {},
+  "name": "GeoInfoAPP",
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

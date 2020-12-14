@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Location details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <agm-map *ngIf="location && location.latitude && location.longitude" [latitude]="location.latitude" [longitude]="location.longitude" 
+    [zoom]="17" [streetViewControl]="false">
+    <agm-marker [markerDraggable]="true" (dragEnd)="markerDragEnd($event)" 
+      [latitude]="location.latitude" [longitude]="location.longitude"></agm-marker>
+  </agm-map>
+</ion-content>
+
+<ion-footer>
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <ion-list>
+      <ion-item detail="false">
+        <ion-label position="floating">Dirección</ion-label>
+        <ion-input formControlName="address" type="text" maxlength="60"></ion-input>
+      </ion-item>
+      <ion-item detail="false">
+        <ion-label position="floating">Referencia</ion-label>
+        <ion-input formControlName="reference" type="text" maxlength="50"></ion-input>
+      </ion-item>
+      <ion-button type="submit" [disabled]="!formGroup.valid" expand="full" shape="round">Save</ion-button>
+    </ion-list>
+  </form>
+</ion-footer>
