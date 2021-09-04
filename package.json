@@ -10,7 +10,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build-android": "ionic cordova build android --prod --release"
+    "build:android": "ionic cordova build android --prod --release"
   },
   "private": true,
   "dependencies": {
@@ -43,7 +43,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",
-    "cordova-android": "^9.0.0",
+    "cordova-android": "^9.1.0",
     "cordova-androidx-build": "^1.0.4",
     "cordova-plugin-add-swift-support": "^2.0.2",
     "cordova-plugin-device": "^2.0.2",
@@ -82,7 +82,9 @@
         "GPS_REQUIRED": "true"
       },
       "cordova-plugin-nativegeocoder": {},
-      "cordova-plugin-request-location-accuracy": {}
+      "cordova-plugin-request-location-accuracy": {
+        "PLAY_SERVICES_LOCATION_VERSION": "16.+"
+      }
     },
     "platforms": [
       "android"
